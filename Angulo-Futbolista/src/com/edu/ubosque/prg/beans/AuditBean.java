@@ -24,7 +24,6 @@ import org.jboss.logging.Logger;
 @SessionScoped
 public class AuditBean implements Serializable {
 
-	//Atributos
 	private Audit auditoria;
 	private DataModel listaAuditoria;
 	private static final Logger logger = Logger.getLogger(AuditBean.class);
