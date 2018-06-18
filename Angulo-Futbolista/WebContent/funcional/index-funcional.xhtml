@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+
+<h:head>
+
+	<meta charset="UTF-8" />
+
+	<title>Usuarios</title>
+
+</h:head>
+
+
+<h:body>
+ 
+	<ui:composition template="/resources/templates/template-funcional.xhtml">
+	<ui:define name="content">
+	
+	
+
+	
+	<p:dataTable var="news" value="#{newBean.listarNew}" 
+	scrollHeight="150" frozenRows="1" rows="10" paginator="true" 
+	rowsPerPageTemplate="5,10,15"  emptyMessage="No se encontraron noticias"> <!--  filteredValue="#{dtFilterView.filteredCars}"-->
+	 
+		
+		
+		
+		<p:column filterBy="#{news.dateNews}" sortBy="#{news.dateNews}">
+			<f:facet name="header">
+				<h:outputText value="Fecha" />
+			</f:facet>
+			<h:outputText value="#{news.dateNews}" />
+		</p:column>
+		
+		<p:column filterBy="#{news.shortDescription}" sortBy="#{news.shortDescription}">
+			<f:facet name="header">
+				<h:outputText value="Short Description" />
+			</f:facet>
+			<h:outputText value="#{news.shortDescription}" />
+		</p:column>
+		
+		<p:column filterBy="#{news.largeDescription}" sortBy="#{news.largeDescription}">
+			<f:facet name="header">
+				<h:outputText value="Large Description" />
+			</f:facet>
+			<h:outputText value="#{news.largeDescription}" />
+		</p:column>
+		
+		<p:column style="width:10%" >
+			<f:facet name="header">
+				<h:outputText value="" />
+			</f:facet>
+			<h:form>
+				<p:commandButton action="#{newBean.prepararModificarNoticia}" icon="ui-icon-folder-open" />
+			</h:form>
+		</p:column>
+	
+		
+		
+		
+		
+	 
+		
+		
+		
+	</p:dataTable>
+	
+	<p:commandButton action="nuevaNoticia" icon="ui-icon-plus" />
+	
+	
+	
+	
+	
+	
+	</ui:define>
+	
+	</ui:composition>	
+
+</h:body>
+
+
+</html>

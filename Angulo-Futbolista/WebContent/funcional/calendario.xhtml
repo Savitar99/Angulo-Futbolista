@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+
+<h:head>
+
+	<meta charset="UTF-8" />
+
+	<title>Usuarios</title>
+
+</h:head>
+
+
+<h:body>
+ 
+	<ui:composition template="/resources/templates/template-funcional.xhtml">
+	<ui:define name="content">
+	
+	
+	<h:form>
+	<p:dataTable var="match" value="#{matchBean.listarMatch}" 
+	scrollHeight="150" rows="10" paginator="true" 
+	rowsPerPageTemplate="5,10,15"  emptyMessage="No se encontraron partidos"> <!--  filteredValue="#{dtFilterView.filteredCars}"-->
+	 
+	  
+		
+		<p:column filterBy="#{match.grupo}" sortBy="#{match.grupo}">
+			<f:facet name="header">
+				<h:outputText value="Grupo" />
+			</f:facet>
+			<h:outputText value="#{match.grupo}" />
+		</p:column>
+		
+		<p:column filterBy="#{match.estadio}" sortBy="#{match.estadio}">
+			<f:facet name="header">
+				<h:outputText value="Estadio" />
+			</f:facet>
+			<h:outputText value="#{match.estadio}" />
+		</p:column>
+		
+		<p:column filterBy="#{match.equipo1}" sortBy="#{match.equipo1}">
+			<f:facet name="header">
+				<h:outputText value="Equipo 1" />
+			</f:facet>
+			<h:outputText value="#{match.equipo1}" />
+		</p:column>
+		
+		<p:column filterBy="#{match.equipo2}" sortBy="#{match.equipo2}">
+			<f:facet name="header">
+				<h:outputText value="Equipo 2" />
+			</f:facet>
+			<h:outputText value="#{match.equipo2}" />
+		</p:column>
+		
+		<p:column filterBy="#{match.fecha}" sortBy="#{match.fecha}">
+			<f:facet name="header">
+				<h:outputText value="Fecha" />
+			</f:facet>
+			<h:outputText value="#{match.fecha}" />
+		</p:column>
+		
+		<p:column style="width:10%">
+			<f:facet name="header">
+				<h:outputText value="" />
+			</f:facet>
+			<h:form>
+				<p:commandButton action="#{matchBean.prepararModificarMatch}" icon="ui-icon-folder-open" />
+			</h:form>
+		</p:column>
+	
+		
+		
+		
+		
+	 
+		
+		
+		
+	</p:dataTable>
+	
+		<p:commandButton action="nuevoPartido" icon="ui-icon-plus" />
+	
+	
+	</h:form>
+	
+	
+	
+	
+	
+	</ui:define>
+	
+	</ui:composition>	
+
+</h:body>
+
+
+</html>

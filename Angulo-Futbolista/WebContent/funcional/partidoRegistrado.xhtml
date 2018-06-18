@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+
+	<meta charset="UTF-8" />
+
+	<title>Noticias</title>
+
+</h:head>
+
+
+<h:body>
+
+	<ui:composition template="/resources/templates/template-login-funcional.xhtml">
+	
+		<ui:define name="content">
+		
+		<h:form>
+
+				<h:panelGrid styleClass="tabla_restaurar_contrasena" cellspacing="6">
+
+				<p:selectOneMenu value="#{matchBean.match.grupo}">
+				    <f:selectItem itemLabel="Seleccione el grupo" itemValue="NULL" />
+					<f:selectItem itemLabel="Grupo A" itemValue="A" />
+					<f:selectItem itemLabel="Grupo B" itemValue="B" />
+					<f:selectItem itemLabel="Grupo C" itemValue="C" />
+					<f:selectItem itemLabel="Grupo D" itemValue="D" />
+					<f:selectItem itemLabel="Grupo E" itemValue="E" />
+					<f:selectItem itemLabel="Grupo F" itemValue="F" />
+					<f:selectItem itemLabel="Grupo G" itemValue="G" />
+					<f:selectItem itemLabel="Grupo H" itemValue="H" />
+				 </p:selectOneMenu>
+				 
+				
+				   <p:selectOneMenu value="#{matchBean.match.estadio}">
+				    <f:selectItem itemLabel="Seleccione el estadio" itemValue="NULL" />
+				    <f:selectItem itemLabel="Spartak Stadium" itemValue="Spartak Stadium" />
+				    <f:selectItem itemLabel="Luzhniki" itemValue="Luzhniki" />
+				    <f:selectItem itemLabel="Kazán Arena" itemValue="Kazán Arena" />
+				    <f:selectItem itemLabel="Mordovia Arena" itemValue="Mordovia Arena" />
+				    <f:selectItem itemLabel="Samara Arena" itemValue="Samara Arena" />
+				    <f:selectItem itemLabel="Ekaterimburgo Arena" itemValue="Ekaterimburgo Arena" />
+				    <f:selectItem itemLabel="Volgograd Arena" itemValue="Volgograd Arena" />
+				    <f:selectItem itemLabel="Rostov Arena" itemValue="Rostov Arena" />
+				    <f:selectItem itemLabel="Fisht" itemValue="Fisht" />
+				    <f:selectItem itemLabel="Nizhny Novgorod" itemValue="Nizhny Novgorod" />
+				    <f:selectItem itemLabel="San Petesburgo Stadium" itemValue="San Petesburgo Stadium" />
+				    <f:selectItem itemLabel="Kaliningrado Stadium" itemValue="Kaliningrado Stadium" />
+				 </p:selectOneMenu>
+				 
+				 
+				 <p:selectOneMenu value="#{matchBean.match.equipo1}">
+				    <f:selectItem itemLabel="Equipo 1" itemValue="NULL" />
+				    <f:selectItem itemLabel="Rusia" itemValue="Rusia" />
+				    <f:selectItem itemLabel="Arabia Saudi" itemValue="Arabia Saudi" />
+				    <f:selectItem itemLabel="Egipto" itemValue="Egipto" />
+				    <f:selectItem itemLabel="Uruguay" itemValue="Uruguay" />
+				    <f:selectItem itemLabel="Portugal" itemValue="Portugal" />
+				    <f:selectItem itemLabel="España" itemValue="España" />
+				    <f:selectItem itemLabel="Marruecos" itemValue="Marruecos" />
+				    <f:selectItem itemLabel="RI de iran" itemValue="RI de iran" />
+				    <f:selectItem itemLabel="Francia" itemValue="Francia" />
+				    <f:selectItem itemLabel="Australia" itemValue="Australia" />
+				    <f:selectItem itemLabel="Peru" itemValue="Peru" />
+				    <f:selectItem itemLabel="Dinamarca" itemValue="Dinamarca" />
+				    <f:selectItem itemLabel="Argentina" itemValue="Argentina" />
+				    <f:selectItem itemLabel="Islandia" itemValue="Islandia" />
+				    <f:selectItem itemLabel="Croacia" itemValue="Croacia" />
+				    <f:selectItem itemLabel="Nigeria" itemValue="Nigeria" />
+				    <f:selectItem itemLabel="Brasil" itemValue="Brasil" />
+				    <f:selectItem itemLabel="Suiza" itemValue="Suiza" />
+				    <f:selectItem itemLabel="Costa Rica" itemValue="Costa Rica" />
+				    <f:selectItem itemLabel="Serbia" itemValue="Serbia" />
+				    <f:selectItem itemLabel="Alemania" itemValue="Alemania" />
+				    <f:selectItem itemLabel="Mexico" itemValue="Mexico" />
+				    <f:selectItem itemLabel="Suecia" itemValue="Suecia" />
+				    <f:selectItem itemLabel="Republica de Corea" itemValue="Republica de Corea" />
+				    <f:selectItem itemLabel="Belgica" itemValue="Belgica" />
+				    <f:selectItem itemLabel="Panamá" itemValue="Panamá" />
+				    <f:selectItem itemLabel="Tunez" itemValue="Tunez" />
+				    <f:selectItem itemLabel="Inglaterra" itemValue="Inglaterra" />
+				    <f:selectItem itemLabel="Polonia" itemValue="Polonia" />
+				    <f:selectItem itemLabel="Senegal" itemValue="Senegal" />
+				    <f:selectItem itemLabel="Colombia" itemValue="Colombia" />
+				    <f:selectItem itemLabel="Japon" itemValue="Japon" />
+				 </p:selectOneMenu>
+				 
+				 <p:selectOneMenu value="#{matchBean.match.equipo2}">
+				    <f:selectItem itemLabel="Equipo 2" itemValue="NULL" />
+				    <f:selectItem itemLabel="Rusia" itemValue="Rusia" />
+				    <f:selectItem itemLabel="Arabia Saudi" itemValue="Arabia Saudi" />
+				    <f:selectItem itemLabel="Egipto" itemValue="Egipto" />
+				    <f:selectItem itemLabel="Uruguay" itemValue="Uruguay" />
+				    <f:selectItem itemLabel="Portugal" itemValue="Portugal" />
+				    <f:selectItem itemLabel="España" itemValue="España" />
+				    <f:selectItem itemLabel="Marruecos" itemValue="Marruecos" />
+				    <f:selectItem itemLabel="RI de iran" itemValue="RI de iran" />
+				    <f:selectItem itemLabel="Francia" itemValue="Francia" />
+				    <f:selectItem itemLabel="Australia" itemValue="Australia" />
+				    <f:selectItem itemLabel="Peru" itemValue="Peru" />
+				    <f:selectItem itemLabel="Dinamarca" itemValue="Dinamarca" />
+				    <f:selectItem itemLabel="Argentina" itemValue="Argentina" />
+				    <f:selectItem itemLabel="Islandia" itemValue="Islandia" />
+				    <f:selectItem itemLabel="Croacia" itemValue="Croacia" />
+				    <f:selectItem itemLabel="Nigeria" itemValue="Nigeria" />
+				    <f:selectItem itemLabel="Brasil" itemValue="Brasil" />
+				    <f:selectItem itemLabel="Suiza" itemValue="Suiza" />
+				    <f:selectItem itemLabel="Costa Rica" itemValue="Costa Rica" />
+				    <f:selectItem itemLabel="Serbia" itemValue="Serbia" />
+				    <f:selectItem itemLabel="Alemania" itemValue="Alemania" />
+				    <f:selectItem itemLabel="Mexico" itemValue="Mexico" />
+				    <f:selectItem itemLabel="Suecia" itemValue="Suecia" />
+				    <f:selectItem itemLabel="Republica de Corea" itemValue="Republica de Corea" />
+				    <f:selectItem itemLabel="Belgica" itemValue="Belgica" />
+				    <f:selectItem itemLabel="Panamá" itemValue="Panamá" />
+				    <f:selectItem itemLabel="Tunez" itemValue="Tunez" />
+				    <f:selectItem itemLabel="Inglaterra" itemValue="Inglaterra" />
+				    <f:selectItem itemLabel="Polonia" itemValue="Polonia" />
+				    <f:selectItem itemLabel="Senegal" itemValue="Senegal" />
+				    <f:selectItem itemLabel="Colombia" itemValue="Colombia" />
+				    <f:selectItem itemLabel="Japon" itemValue="Japon" />
+				 </p:selectOneMenu>
+
+				
+							
+					
+					<h:panelGroup layout="block">
+						<br />
+					</h:panelGroup>
+					
+					<p:commandButton update="" styleClass="restaurar" value="Modificar" action="#{matchBean.modificarMatch}" />
+
+					<h:link styleClass="link" value="volver" outcome="calendario.xhtml" />
+
+				</h:panelGrid>
+
+			</h:form>
+		
+		</ui:define>
+	
+	</ui:composition>	
+
+</h:body>
+
+
+</html>

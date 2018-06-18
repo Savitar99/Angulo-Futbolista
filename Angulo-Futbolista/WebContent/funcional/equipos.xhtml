@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+
+<h:head>
+
+	<meta charset="UTF-8" />
+
+	<title>Usuarios</title>
+
+</h:head>
+
+
+<h:body>
+ 
+	<ui:composition template="/resources/templates/template-funcional.xhtml">
+	<ui:define name="content">
+	
+	
+	<p:dataTable var="team" value="#{teamBean.listarTeam}" 
+	scrollHeight="150"  rows="4" paginator="true" 
+	  emptyMessage="No teams found with given criteria" > <!--  filteredValue="#{dtFilterView.filteredCars}"-->
+	 
+	  
+		
+		<p:column filterBy="#{team.country}" sortBy="#{team.country}">
+			<f:facet name="header">
+				<h:outputText value="País" />
+			</f:facet>
+			<h:outputText value="#{team.country}" />
+		</p:column>
+		
+		<p:column filterBy="#{team.group}" sortBy="#{team.group}">
+			<f:facet name="header">
+				<h:outputText value="Grupo" />
+			</f:facet>
+			<h:outputText value="#{team.group}" />
+		</p:column>
+		
+		<p:column filterBy="#{team.playedGames}" sortBy="#{team.playedGames}">
+			<f:facet name="header">
+				<h:outputText value="Partidos jugados" />
+			</f:facet>
+			<h:outputText value="#{team.playedGames}" />
+		</p:column>
+		
+		
+		
+		<p:column filterBy="#{team.wonMatches}" sortBy="#{team.wonMatches}">
+			<f:facet name="header">
+				<h:outputText value="Partidos ganados" />
+			</f:facet>
+			<h:outputText value="#{team.wonMatches}" />
+		</p:column>
+		
+		<p:column filterBy="#{team.tiedMatches}" sortBy="#{team.tiedMatches}">
+			<f:facet name="header">
+				<h:outputText value="Partidos empatados" />
+			</f:facet>
+			<h:outputText value="#{team.tiedMatches}" />
+		</p:column>
+		
+		<p:column filterBy="#{team.lostMatches}" sortBy="#{team.lostMatches}">
+			<f:facet name="header">
+				<h:outputText value="Partidos perdidos" />
+			</f:facet>
+			<h:outputText value="#{team.lostMatches}" />
+		</p:column>
+		
+		<p:column filterBy="#{team.goalsFavor}" sortBy="#{team.goalsFavor}">
+			<f:facet name="header">
+				<h:outputText value="Goles a favor" />
+			</f:facet>
+			<h:outputText value="#{team.goalsFavor}" />
+		</p:column>
+		
+		<p:column filterBy="#{team.goalsAgainst}" sortBy="#{team.goalsAgainst}">
+			<f:facet name="header">
+				<h:outputText value="Goles en contra" />
+			</f:facet>
+			<h:outputText value="#{team.goalsAgainst}" />
+		</p:column>
+		
+		<p:column filterBy="#{team.points}" sortBy="#{team.points}">
+			<f:facet name="header">
+				<h:outputText value="puntos" />
+			</f:facet>
+			<h:outputText value="#{team.points}" />
+		</p:column>
+		
+		
+		<p:column style="width:10%">
+			<f:facet name="header">
+				<h:outputText value="" />
+			</f:facet>
+			<h:form>
+				<p:commandButton action="#{teamBean.prepararModificarTeam}" icon="ui-icon-folder-open" />
+			</h:form>
+		</p:column>
+	
+		
+		
+		
+		
+	 
+		
+		
+		
+	</p:dataTable>
+	
+		<p:commandButton action="nuevoEquipo" icon="ui-icon-plus" />
+	
+	
+	
+	
+	
+	
+	
+	</ui:define>
+	
+	</ui:composition>	
+
+</h:body>
+
+
+</html>

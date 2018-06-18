@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+
+	<title>Ángulo Futbolista</title>
+
+	<h:outputStylesheet library="styles" name="index-style.css" />
+	<h:outputStylesheet library="styles" name="index-layout.css" />
+
+</h:head>
+
+
+<h:body styleClass="body">
+
+	<h:panelGroup layout="block" id="wrapper">
+
+		<h:panelGroup layout="block" id="header_wrapper">
+
+			<h:panelGroup layout="block" id="header_blurry">
+
+			</h:panelGroup>
+
+			<h:panelGroup layout="block" id="header">
+			
+                
+				<h:graphicImage id="logo" library="images" name="LogoOriginal.png" />
+
+				<h:outputText id="page_name" value="#{propertie.nombre_pagina}" />
+
+				
+
+			</h:panelGroup>
+
+		</h:panelGroup>
+		
+<h:form>
+				<h:commandLink styleClass="linkCalidoso"  action="#{userBean.cerrar}">#{textManager.text}</h:commandLink>
+</h:form>
+
+		<h:panelGroup layout="block" id="main">
+
+
+			<h:panelGroup layout="block" >
+
+			</h:panelGroup>
+
+
+			<h:panelGroup layout="block" id="main_section">
+
+				<h:form id="nav_menu">
+
+					<ui:insert name="nav_menu">
+
+
+						
+						
+	 <p:menu toggleable="true" position="dynamic">
+        <p:submenu label="Menu">
+            <p:menuitem value="Noticias"  icon="ui-icon-disk" outcome="index-funcional.xhtml" />
+            <p:menuitem value="Arbitros"  icon="ui-icon-arrowrefresh-1-w" outcome="arbitros.xhtml"/>
+            <p:menuitem value="Estadios"  icon="ui-icon-arrowrefresh-1-w" outcome="estadios.xhtml"/>
+            <p:menuitem value="Equipos"  icon="ui-icon-arrowrefresh-1-w" outcome="equipos.xhtml"/>
+            <p:menuitem value="Goleadores"  icon="ui-icon-arrowrefresh-1-w" outcome="goleadores.xhtml"/>
+            <p:menuitem value="Partidos"  icon="ui-icon-arrowrefresh-1-w" outcome="calendario.xhtml"/>
+            <p:menuitem value="Perfil"  icon="ui-icon-arrowrefresh-1-w" outcome="/user/perfil.xhtml"/>
+            
+       </p:submenu>
+      </p:menu>
+      
+      <br> </br>
+
+					</ui:insert>
+
+				</h:form>
+
+				<h:panelGroup layout="block" id="content">
+
+					<ui:insert name="content">
+
+					</ui:insert>
+
+				</h:panelGroup>
+
+			</h:panelGroup>
+
+		</h:panelGroup>
+
+	</h:panelGroup>
+
+</h:body>
+
+
+</html>

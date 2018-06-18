@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+
+<h:head>
+
+	<meta charset="UTF-8" />
+
+	<title>Equipo</title>
+
+</h:head>
+
+
+<h:body>
+ 
+	<ui:composition template="/resources/templates/template-login-funcional.xhtml">
+	<ui:define name="content">
+	
+	
+	 <p:growl id="growl" showDetail="true" sticky="true" /> 
+
+			<h:form>
+
+				<h:panelGrid id="grid" styleClass="tabla_crear_cuenta"
+					cellspacing="5">
+
+					<h:panelGroup layout="block" id="block">
+						<p:inputText id="country" styleClass="textbox_larga"
+							required="true" requiredMessage=" *"
+							value="#{teamBean.team.country}" />
+							
+							
+						<p:watermark for="country" value="País" id="watermark_country" />
+						<h:message for="country" styleClass="error"/>
+					</h:panelGroup>
+			
+
+					<h:panelGroup layout="block" id="block2">
+						<p:inputText id="group" styleClass="textbox_larga"
+							required="true" requiredMessage=" *" 
+							value="#{teamBean.team.group}" maxlength="1" />
+						<p:watermark for="group" value="Grupo" id="watermark_group" />
+						<h:message for="group" styleClass="error"/>
+					</h:panelGroup>
+					
+					
+					
+					
+
+					<p:commandButton update="block block2 growl" styleClass="registrar"
+						value="Registrar" action="#{teamBean.adicionarTeam}" />
+
+					<h:link styleClass="link" value="volver" outcome="equipos.xhtml" />
+
+
+				</h:panelGrid>
+
+			</h:form>
+	
+	
+	
+	
+	
+	
+	</ui:define>
+	
+	</ui:composition>	
+
+</h:body>
+
+
+</html>

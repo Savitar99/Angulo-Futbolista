@@ -1,0 +1,133 @@
+@CHARSET "ISO-8859-1";
+
+.body,html {
+	
+	background: url("#{resource['images:fondo3.jpg']}");
+
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	
+	font-family: Arial, sans-serif;	
+		
+}		
+
+#header_blurry {
+	
+	background-color: #e5e5e5;
+	
+	opacity: 0.90;
+    filter: alpha(opacity=90);
+
+}
+
+#logo {
+
+	border-radius: 3px;
+
+	
+	
+}
+
+#sesion {
+	
+	text-decoration: none;
+	
+	font-size: 1.5em;
+	font-weight: 500;
+	font-family: Impact, fantasy;
+	color: #{propertie.color1};
+		
+}
+
+#page_name {
+	
+	font-size: 3.8em;
+	font-weight: 100;
+	font-family: Impact, fantasy;
+	color: #{propertie.color1};
+	
+}
+
+
+#main_section_blurry {
+
+	border: solid;
+	border-color: white; 
+	border-radius: 4px;
+
+	background-color: #d4d6d1;
+	
+	opacity: 0.35;
+    filter: alpha(opacity=35);
+	
+}
+
+#nav-menu {
+	
+	font-size: 1.4em;
+	
+	
+}
+
+.grupos {
+	border-radius: 4px;
+	background-color: #ECCD6A;
+	opacity: 0.90;
+    filter: alpha(opacity=90);
+}
+
+.encabezado_grupos {
+	
+	font-size: 1.7em;
+	color: #{propertie.color1};
+	
+}
+
+.pais {
+	font-size: 1.3em;
+	color: #1a1f4f;
+}
+
+
+.ui-menubar,.ui-menu-child,.ui-menu{
+    background: #ECCD6A !important;
+    right: 110px;
+    
+}
+
+.menu-calidoso{
+	background-color:#ECCD6A
+
+}
+
+.boton-calidoso{
+	background:#ECCD6A
+}
+
+
+
+ui-datatable-even
+{
+	background: #ECCD6A;
+}
+
+ui-datatable-odd
+{
+	background: #ECCD6A;
+}
+
+
+.linkCalidoso
+{
+	 text-decoration: none;
+	right:50%;
+	font-size: 1.5em;
+	font-weight: 500;
+	font-family: Impact, fantasy;
+	color: white
+	
+	
+}
+

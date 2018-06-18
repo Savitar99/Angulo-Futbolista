@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+
+<h:head>
+
+	<meta charset="UTF-8" />
+
+	<title>Usuarios</title>
+
+</h:head>
+
+
+<h:body>
+ 
+	<ui:composition template="/resources/templates/template-funcional.xhtml">
+	<ui:define name="content">
+	
+	
+	
+	<p:dataTable var="stadium" value="#{stadiumBean.listarStadium}" 
+	scrollHeight="150" rows="10" paginator="true" 
+	rowsPerPageTemplate="5,10,15"  emptyMessage="No se encontraron estadios"> <!--  filteredValue="#{dtFilterView.filteredCars}"-->
+	 
+	  <p:column filterBy="#{stadium.name}" sortBy="#{stadium.name}">
+			<f:facet name="header">
+				<h:outputText value="Nombre" />
+			</f:facet>
+			<h:outputText value="#{stadium.name}" />
+		</p:column>
+	  
+	  <p:column filterBy="#{stadium.city}" sortBy="#{stadium.city}">
+			<f:facet name="header">
+				<h:outputText value="Ciudad" />
+			</f:facet>
+			<h:outputText value="#{stadium.city}" />
+		</p:column>
+		
+		<p:column filterBy="#{stadium.capacity}" sortBy="#{stadium.capacity}">
+			<f:facet name="header">
+				<h:outputText value="Capacidad" />
+			</f:facet>
+			<h:outputText value="#{stadium.capacity}" />
+		</p:column>
+		
+		<p:column filterBy="#{stadium.population}" sortBy="#{stadium.population}">
+			<f:facet name="header">
+				<h:outputText value="Población" />
+			</f:facet>
+			<h:outputText value="#{stadium.population}" />
+		</p:column>
+		
+		<p:column filterBy="#{stadium.temperature}" sortBy="#{stadium.temperature}">
+			<f:facet name="header">
+				<h:outputText value="Temperatura" />
+			</f:facet>
+			<h:outputText value="#{stadium.temperature}" />
+		</p:column>
+		
+			
+		
+		
+		<p:column style="width:10%">
+			<f:facet name="header">
+				<h:outputText value="" />
+			</f:facet>
+			<h:form>
+				<p:commandButton action="#{stadiumBean.prepararModificarStadium}" icon="ui-icon-folder-open" />
+			</h:form>
+		</p:column>
+	
+		
+		
+		
+		
+	 
+		
+		
+		
+	</p:dataTable>
+	
+	<p:commandButton action="nuevoEstadio" icon="ui-icon-plus" />
+	
+	
+	
+	
+	
+	
+	</ui:define>
+	
+	</ui:composition>	
+
+</h:body>
+
+
+</html>

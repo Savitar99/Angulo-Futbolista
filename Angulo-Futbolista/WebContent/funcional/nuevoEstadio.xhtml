@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+
+<h:head>
+
+	<meta charset="UTF-8" />
+
+	<title>Estadio</title>
+
+</h:head>
+
+
+<h:body>
+ 
+	<ui:composition template="/resources/templates/template-login-funcional.xhtml">
+	<ui:define name="content">
+	
+	
+	 <p:growl id="growl" showDetail="true" sticky="true" /> 
+
+			<h:form>
+
+                 <h:panelGrid id="grid" styleClass="tabla_crear_cuenta"
+					cellspacing="5">
+
+					<h:panelGroup layout="block" id="block0">
+						<p:inputText id="name" styleClass="textbox_larga"
+							required="true" requiredMessage=" *"
+							value="#{stadiumBean.stadium.name}" />
+						<p:watermark for="name" value="Nombre" id="watermark_name" />
+						<h:message for="name" styleClass="error"/>
+					</h:panelGroup>
+					
+					
+				
+
+					<h:panelGroup layout="block" id="block">
+						<p:inputText id="city" styleClass="textbox_larga"
+							required="true" requiredMessage=" *"
+							value="#{stadiumBean.stadium.city}" />
+						<p:watermark for="city" value="Ciudad" id="watermark_city" />
+						<h:message for="city" styleClass="error"/>
+					</h:panelGroup>
+			
+
+					<h:panelGroup layout="block" id="block2">
+						<p:inputText id="capacity" styleClass="textbox_larga"
+							required="true" requiredMessage=" *" 
+							value="#{stadiumBean.stadium.capacity}" />
+						<p:watermark for="capacity" value="Capacidad" id="watermark_capacity" />
+						<h:message for="capacity" styleClass="error"/>
+					</h:panelGroup>
+					
+					<h:panelGroup layout="block" id="block3">
+						<p:inputText id="temperature" styleClass="textbox_larga"
+							required="true" requiredMessage=" *" 
+							value="#{stadiumBean.stadium.temperature}" />
+						<p:watermark for="temperature" value="Temperatura" id="watermark_temperature" />
+						<h:message for="temperature" styleClass="error"/>
+					</h:panelGroup>
+					
+				
+					
+					
+
+					<p:commandButton update="block block0 block2 block3 growl" styleClass="registrar"
+						value="Registrar" action="#{stadiumBean.adicionarStadium}" />
+
+					<h:link styleClass="link" value="volver" outcome="estadios.xhtml" />
+
+
+				</h:panelGrid>
+
+			</h:form>
+	
+	
+	
+	
+	
+	
+	</ui:define>
+	
+	</ui:composition>	
+
+</h:body>
+
+
+</html>

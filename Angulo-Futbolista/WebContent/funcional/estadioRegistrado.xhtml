@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+
+	<meta charset="UTF-8" />
+
+	<title>Equipo</title>
+
+</h:head>
+
+
+<h:body>
+
+	<ui:composition template="/resources/templates/template-login-funcional.xhtml">
+	
+		<ui:define name="content">
+		
+		<h:form>
+
+				<h:panelGrid styleClass="tabla_restaurar_contrasena" cellspacing="6">
+
+                     <p:selectOneMenu value="#{matchBean.match.estadio}">
+				    <f:selectItem itemLabel="Seleccione el estadio" itemValue="NULL" />
+				    <f:selectItem itemLabel="Spartak Stadium" itemValue="Spartak Stadium" />
+				    <f:selectItem itemLabel="Luzhniki" itemValue="Luzhniki" />
+				    <f:selectItem itemLabel="Kazán Arena" itemValue="Kazán Arena" />
+				    <f:selectItem itemLabel="Mordovia Arena" itemValue="Mordovia Arena" />
+				    <f:selectItem itemLabel="Samara Arena" itemValue="Samara Arena" />
+				    <f:selectItem itemLabel="Ekaterimburgo Arena" itemValue="Ekaterimburgo Arena" />
+				    <f:selectItem itemLabel="Volgograd Arena" itemValue="Volgograd Arena" />
+				    <f:selectItem itemLabel="Rostov Arena" itemValue="Rostov Arena" />
+				    <f:selectItem itemLabel="Fisht" itemValue="Fisht" />
+				    <f:selectItem itemLabel="Nizhny Novgorod" itemValue="Nizhny Novgorod" />
+				    <f:selectItem itemLabel="San Petesburgo Stadium" itemValue="San Petesburgo Stadium" />
+				    <f:selectItem itemLabel="Kaliningrado Stadium" itemValue="Kaliningrado Stadium" />
+				 </p:selectOneMenu>
+				 
+					<p:inputText id="city" styleClass="textbox_larga"  value="#{stadiumBean.stadium.city}" />
+					<p:inputText id="capacity" styleClass="textbox_larga" value="#{stadiumBean.stadium.capacity}" />
+					<p:inputText id="temperature" styleClass="textbox_larga" value="#{stadiumBean.stadium.temperature}" />
+					
+				
+							
+					
+					<h:panelGroup layout="block">
+						<br />
+					</h:panelGroup>
+					
+					<p:commandButton update="" styleClass="restaurar" value="Modificar" action="#{stadiumBean.modificarStadium}" />
+
+					<h:link styleClass="link" value="volver" outcome="estadios.xhtml" />
+
+				</h:panelGrid>
+
+			</h:form>
+		
+		</ui:define>
+	
+	</ui:composition>	
+
+</h:body>
+
+
+</html>

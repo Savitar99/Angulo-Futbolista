@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+
+	<meta charset="UTF-8" />
+
+	<title>Parameter</title>
+	
+
+</h:head>
+
+
+<h:body>
+
+	<ui:composition template="/resources/templates/template-login-admin.xhtml">
+	
+		<ui:define name="content">
+		
+		<h:form>
+
+				<h:panelGrid styleClass="tabla_restaurar_contrasena" cellspacing="6">
+<!--  
+					<p:inputText id="userName" styleClass="textbox_larga"  value="#{userBean.usuario.userName}" />
+					<p:inputText id="email" styleClass="textbox_larga" value="#{userBean.usuario.emailAddress}" />
+-->				
+				<p:selectOneMenu value="#{userBean.usuario.userType}">
+				    <f:selectItem itemLabel="Seleccione" itemValue="NULL" />
+					<f:selectItem itemLabel="Administrador" itemValue="ADMIN" />
+					<f:selectItem itemLabel="Funcional" itemValue="FUNCIONAL" />
+					<f:selectItem itemLabel="Operativo" itemValue="OPERATIVO" />
+				 </p:selectOneMenu>
+					
+					
+					
+					
+					
+					<h:panelGroup layout="block">
+						<br />
+					</h:panelGroup>
+					
+					<p:commandButton update="" styleClass="restaurar" value="Modificar" action="#{userBean.modificarUsuario}" />
+
+					<h:link styleClass="link" value="volver" outcome="index-administrador.xhtml" />
+
+				</h:panelGrid>
+
+			</h:form>
+		
+		</ui:define>
+	
+	</ui:composition>	
+
+</h:body>
+
+
+</html>

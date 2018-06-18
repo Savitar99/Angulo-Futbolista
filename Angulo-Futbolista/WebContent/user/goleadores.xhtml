@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+
+<h:head>
+
+	<meta charset="UTF-8" />
+
+	<title>Usuarios</title>
+	
+
+</h:head>
+
+
+<h:body>
+ 
+	<ui:composition template="/resources/templates/template-index.xhtml">
+	<ui:define name="content">
+	
+	
+	<p:dataTable var="goalScorer" value="#{goalScorerBean.listarGoalScorer}" 
+	scrollable="true" scrollWidth="100%"  rows="10" paginator="true" 
+	rowsPerPageTemplate="5,10,15"  emptyMessage="No se encontraron goleadores"> <!--  filteredValue="#{dtFilterView.filteredCars}"--> 
+		
+		<p:column  filterBy="#{goalScorer.fullName}" sortBy="#{goalScorer.fullName}">
+			<f:facet name="header">
+				<h:outputText value="Nombre" />
+			</f:facet>
+			<h:outputText value="#{goalScorer.fullName}" />
+		</p:column>
+		
+		<p:column filterBy="#{goalScorer.team}" sortBy="#{goalScorer.team}">
+			<f:facet name="header">
+				<h:outputText value="Equipo" />
+			</f:facet>
+			<h:outputText value="#{goalScorer.team}" />
+		</p:column>
+		
+		<p:column  filterBy="#{goalScorer.goals}" sortBy="#{goalScorer.goals}">
+			<f:facet name="header">
+				<h:outputText value="Goles" />
+			</f:facet>
+			<h:outputText value="#{goalScorer.goals}" />
+		</p:column>
+	
+	
+	
+	</p:dataTable>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</ui:define>
+	
+	
+	
+	</ui:composition>	
+
+</h:body>
+
+
+
+
+</html>

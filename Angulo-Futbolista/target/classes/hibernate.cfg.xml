@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">12345</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/ubosqueprg2?zeroDateTimeBehavior=convertToNull</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        
+        <mapping class="com.edu.ubosque.prg.entity.Match"/>
+        <mapping class="com.edu.ubosque.prg.entity.Audit"/>
+        <mapping class="com.edu.ubosque.prg.entity.GoalScorer"/>
+        <mapping class="com.edu.ubosque.prg.entity.New"/>
+        <mapping class="com.edu.ubosque.prg.entity.Parameter"/>
+        <mapping class="com.edu.ubosque.prg.entity.Referee"/>
+        <mapping class="com.edu.ubosque.prg.entity.Stadium"/>
+        <mapping class="com.edu.ubosque.prg.entity.Team"/>
+        <mapping class="com.edu.ubosque.prg.entity.User"/>
+     
+      
+        
+      
+    
+        
+        
+        
+        
+        
+        
+    </session-factory>
+</hibernate-configuration>

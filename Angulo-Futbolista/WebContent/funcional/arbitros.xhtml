@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+
+<h:head>
+
+	<meta charset="UTF-8" />
+
+	<title>Usuarios</title>
+
+</h:head>
+
+
+<h:body>
+ 
+	<ui:composition template="/resources/templates/template-funcional.xhtml">
+	<ui:define name="content">
+	
+	
+	<h:form>
+	<p:dataTable var="referee" value="#{refereeBean.listarReferee}" 
+	scrollHeight="150" rows="10" paginator="true" 
+	rowsPerPageTemplate="5,10,15"  emptyMessage="No se encontraron arbitros"> <!--  filteredValue="#{dtFilterView.filteredCars}"-->
+	 
+	  
+		
+		<p:column filterBy="#{referee.fullName}" sortBy="#{referee.fullName}">
+			<f:facet name="header">
+				<h:outputText value="Nombre completo" />
+			</f:facet>
+			<h:outputText value="#{referee.fullName}" />
+		</p:column>
+		
+		<p:column filterBy="#{referee.nationality}" sortBy="#{referee.nationality}">
+			<f:facet name="header">
+				<h:outputText value="Nacionalidad" />
+			</f:facet>
+			<h:outputText value="#{referee.nationality}" />
+		</p:column>
+		
+		<p:column style="width:10%">
+			<f:facet name="header">
+				<h:outputText value="" />
+			</f:facet>
+			<h:form>
+				<p:commandButton action="#{refereeBean.prepararModificarReferee}" icon="ui-icon-folder-open" />
+			</h:form>
+		</p:column>
+	
+	
+		
+		
+		
+	</p:dataTable>
+	
+		<p:commandButton action="nuevoArbitro" icon="ui-icon-plus" />
+	
+	
+	</h:form>
+	
+	
+	
+	
+	
+	</ui:define>
+	
+	</ui:composition>	
+
+</h:body>
+
+
+</html>

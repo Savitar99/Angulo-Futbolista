@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+
+<h:head>
+
+	<meta charset="UTF-8" />
+
+	<title>Arbitro</title>
+
+</h:head>
+
+
+<h:body>
+ 
+	<ui:composition template="/resources/templates/template-login-funcional.xhtml">
+	<ui:define name="content">
+	
+	
+	 <p:growl id="growl" showDetail="true" sticky="true" /> 
+
+			<h:form>
+
+				<h:panelGrid id="grid" styleClass="tabla_crear_cuenta"
+					cellspacing="5">
+
+					<h:panelGroup layout="block" id="block">
+						<p:inputText id="fullName" styleClass="textbox_larga"
+							required="true" requiredMessage=" *"
+							value="#{refereeBean.referee.fullName}" />
+							
+							
+						<p:watermark for="fullName" value="Nombre conpleto" id="watermark_fullName" />
+						<h:message for="fullName" styleClass="error"/>
+					</h:panelGroup>
+			
+
+					<h:panelGroup layout="block" id="block2">
+						<p:inputText id="nationality" styleClass="textbox_larga"
+							required="true" requiredMessage=" *" 
+							value="#{refereeBean.referee.nationality}" />
+						<p:watermark for="nationality" value="Nacionalidad" id="watermark_nationality" />
+						<h:message for="nationality" styleClass="error"/>
+					</h:panelGroup>
+
+					
+					
+
+					<p:commandButton update="block block2 growl" styleClass="registrar"
+						value="Registrar" action="#{refereeBean.adicionarReferee}" />
+
+					<h:link styleClass="link" value="volver" outcome="arbitros.xhtml" />
+
+
+				</h:panelGrid>
+
+			</h:form>
+	
+	
+	
+	
+	
+	
+	</ui:define>
+	
+	</ui:composition>	
+
+</h:body>
+
+
+</html>

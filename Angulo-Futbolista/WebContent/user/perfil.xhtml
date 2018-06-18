@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+
+</h:head>
+
+
+<h:body>
+
+	<ui:composition template="/resources/templates/template-login-inicio.xhtml">
+
+		<ui:define name="content">
+
+			 <p:growl id="growl" showDetail="true" sticky="true" />
+			 
+			 <br></br>
+			 <h3> Mi perfil </h3> 
+
+			<h:form>
+
+				<h:panelGrid id="grid" styleClass="tabla_crear_cuenta"
+					cellspacing="5">
+
+					<h:panelGroup layout="block" id="block">
+						<p:inputText id="userName" styleClass="textbox_larga"
+							required="true" requiredMessage=" *"  maxlength="8"
+							 value="#{userBean.usuario.userName}" />
+							
+							
+						<p:watermark for="userName" value="Nombre de usuario" id="watermark_userName" />
+						<h:message for="userName" styleClass="error"/>
+					</h:panelGroup>
+			
+
+					<h:panelGroup layout="block" id="block2">
+						<p:inputText id="fullName" styleClass="textbox_larga"
+							required="true" requiredMessage=" *" value="#{userBean.usuario.fullName}" 
+							 />
+						<p:watermark for="fullName" value="Nombre" id="watermark_fullName" />
+						<h:message for="fullName" styleClass="error"/>
+					</h:panelGroup>
+					
+					<h:panelGroup layout="block" id="block3">
+						<p:inputText id="emailAddress" styleClass="textbox_larga"
+							required="true" requiredMessage=" *"  value="#{userBean.usuario.emailAddress}"
+							 />
+						<p:watermark for="emailAddress" value="Correo electrónico" id="watermark_emailAddress" />
+						<h:message for="emailAddress" styleClass="error"/>
+					</h:panelGroup>
+					
+					 <p:selectOneMenu value="#{userBean.usuario.favorite}">
+				    <f:selectItem itemLabel="Equipo favorito" itemValue="NULL" />
+				    <f:selectItem itemLabel="Rusia" itemValue="Rusia" />
+				    <f:selectItem itemLabel="Arabia Saudi" itemValue="Arabia Saudi" />
+				    <f:selectItem itemLabel="Egipto" itemValue="Egipto" />
+				    <f:selectItem itemLabel="Uruguay" itemValue="Uruguay" />
+				    <f:selectItem itemLabel="Portugal" itemValue="Portugal" />
+				    <f:selectItem itemLabel="España" itemValue="España" />
+				    <f:selectItem itemLabel="Marruecos" itemValue="Marruecos" />
+				    <f:selectItem itemLabel="RI de iran" itemValue="RI de iran" />
+				    <f:selectItem itemLabel="Francia" itemValue="Francia" />
+				    <f:selectItem itemLabel="Australia" itemValue="Australia" />
+				    <f:selectItem itemLabel="Peru" itemValue="Peru" />
+				    <f:selectItem itemLabel="Dinamarca" itemValue="Dinamarca" />
+				    <f:selectItem itemLabel="Argentina" itemValue="Argentina" />
+				    <f:selectItem itemLabel="Islandia" itemValue="Islandia" />
+				    <f:selectItem itemLabel="Croacia" itemValue="Croacia" />
+				    <f:selectItem itemLabel="Nigeria" itemValue="Nigeria" />
+				    <f:selectItem itemLabel="Brasil" itemValue="Brasil" />
+				    <f:selectItem itemLabel="Suiza" itemValue="Suiza" />
+				    <f:selectItem itemLabel="Costa Rica" itemValue="Costa Rica" />
+				    <f:selectItem itemLabel="Serbia" itemValue="Serbia" />
+				    <f:selectItem itemLabel="Alemania" itemValue="Alemania" />
+				    <f:selectItem itemLabel="Mexico" itemValue="Mexico" />
+				    <f:selectItem itemLabel="Suecia" itemValue="Suecia" />
+				    <f:selectItem itemLabel="Republica de Corea" itemValue="Republica de Corea" />
+				    <f:selectItem itemLabel="Belgica" itemValue="Belgica" />
+				    <f:selectItem itemLabel="Panamá" itemValue="Panamá" />
+				    <f:selectItem itemLabel="Tunez" itemValue="Tunez" />
+				    <f:selectItem itemLabel="Inglaterra" itemValue="Inglaterra" />
+				    <f:selectItem itemLabel="Polonia" itemValue="Polonia" />
+				    <f:selectItem itemLabel="Senegal" itemValue="Senegal" />
+				    <f:selectItem itemLabel="Colombia" itemValue="Colombia" />
+				    <f:selectItem itemLabel="Japon" itemValue="Japon" />
+				 </p:selectOneMenu>
+					
+					<h:panelGroup layout="block" id="block5">
+						<p:inputText id="type" styleClass="textbox_larga"
+							 requiredMessage=" *"  value="#{userBean.usuario.userType}"
+							 />
+						<p:watermark for="type" value="Equipo favorito" id="watermark_type" />
+						<h:message for="type" styleClass="error"/>
+					</h:panelGroup>
+					
+					
+
+
+					
+					
+
+					<p:commandButton update="block block2 block3  block5 growl" styleClass="registrarse"
+						value="Guardar" action="#{userBean.cambiarPerfil}" />
+
+
+
+				</h:panelGrid>
+
+			</h:form>
+
+		</ui:define>
+
+	</ui:composition>
+
+</h:body>
+
+
+</html>

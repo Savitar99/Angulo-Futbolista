@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+
+	<meta charset="UTF-8" />
+
+	<title>Ángulo Futbolista</title>
+
+</h:head>
+
+
+<h:body>
+
+	<ui:composition template="/resources/templates/template-index-inicio.xhtml">
+	
+		<ui:define name="content">
+		
+		<h:panelGroup id="grupos" layout="block" styleClass="grupos_wrapper ui-g">
+
+				<h:panelGroup id="noticia1" layout="block" styleClass="grupos ui-g-4 ui-md-3 ui-lg-3">
+
+					<h:panelGroup styleClass="header_grupos" layout="block"><h:outputText value="Colombia se despedirá en El Campín" styleClass="encabezado_grupos" /> </h:panelGroup> <br/>
+
+					<h:outputText value="Fuente:" styleClass="pais"/> <br/>
+					<a href="https://www.elespectador.com/deportes/futbol-internacional/colombia-se-despedira-en-el-campin-antes-del-mundial-articulo-754818">El Espectador</a>
+					
+					
+				</h:panelGroup>
+				
+				
+			<h:panelGroup layout="block" styleClass="ui-g-1"/>
+				
+
+				<h:panelGroup id="noticia2" layout="block" styleClass="grupos ui-g-4 ui-md-3 ui-lg-3">
+
+					<h:panelGroup styleClass="header_grupos" layout="block"><h:outputText value="Estos son los estadios para el mundial" styleClass="encabezado_grupos"/> </h:panelGroup> <br/>
+
+					<h:outputText value="Fuente:" styleClass="pais"/> <br/>
+					<a href="https://www.clarin.com/deportes/mundial-2018/estadios-copa-mundial-rusia-2018_0_H181hdlRz.html">Clarín Noticas</a>
+					
+					
+				</h:panelGroup>
+				
+				
+			<h:panelGroup layout="block" styleClass="ui-g-1"/>
+				
+
+				<h:panelGroup id="noticia3" layout="block" styleClass="grupos ui-g-4 ui-md-3 ui-lg-3">
+
+					<h:panelGroup styleClass="header_grupos" layout="block"><h:outputText value="Junior se enfrentará al Medellín en los cuartos de final" styleClass="encabezado_grupos"/> </h:panelGroup> <br/>
+
+					<h:outputText value="Fuente:" styleClass="pais"/> <br/>
+					<a href="https://www.elheraldo.co/rincon-juniorista/junior-se-enfrentara-al-medellin-en-los-cuartos-de-final-491384">El Heraldo</a>
+					
+					
+				</h:panelGroup>
+
+			
+				
+				
+		
+
+			</h:panelGroup>
+		
+		</ui:define>
+	
+	</ui:composition>	
+
+</h:body>
+
+
+</html>

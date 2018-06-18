@@ -1,0 +1,115 @@
+@CHARSET "ISO-8859-1";
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+.body,html {
+	position: absolute;
+	width: 100%;
+	height: 1350px;
+	
+}
+
+
+
+#wrapper {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+#header_wrapper {
+	position: relative;
+	width: 100%;
+	height: 100px;
+	background-color: #ECCD6A;
+	
+}
+
+#header_blurry {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #ECCD6A;
+}
+
+#header {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#logo {
+	height: 85px;
+	width: 145px;
+	margin-left: 9%;
+	margin-top: 5px;
+}
+
+#sesion {
+	position: absolute;
+	right: 0%;
+	margin-right: 9%;
+	margin-top: 60px;
+}
+
+#page_name {
+	position: absolute;
+	margin-top: 22px;
+	margin-left: 30px;
+}
+
+#main {
+	position: relative;
+	height: 1150px;
+	width: 84%;
+	margin-left: 8%;
+	margin-right: 8%;
+	margin-top: 60px;
+}
+
+#main_section {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#main_section_blurry {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#content {
+	position: absolute;
+	width: 100%;
+}
+
+.grupos_wrapper {
+	position: relative;
+	
+	width: 90%;
+	margin-left: 9%;
+	margin-top: 60px;
+	
+}
+
+.grupos {
+	height: 280px;
+		
+	text-align:center;
+	margin-bottom: 30px;
+	display: inline-block;
+}
+
+.header_grupos {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	
+}
+
+
+

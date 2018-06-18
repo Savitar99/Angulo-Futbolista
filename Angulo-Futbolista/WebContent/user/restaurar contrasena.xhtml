@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+
+</h:head>
+
+
+<h:body>
+
+	<ui:composition template="/resources/templates/template-login.xhtml">
+
+		<ui:define name="content">
+
+			<h:form>
+
+				<h:panelGrid styleClass="tabla_restaurar_contrasena" cellspacing="6">
+
+					<p:inputText id="correo" styleClass="textbox_larga" required="true" requiredMessage="*"
+					value="#{userBean.usuario.emailAddress}" validator="#{userBean.validateMailExistente}"/>
+					<p:watermark for="correo" value="Ingresa el correo"
+						id="watermark_correo" />
+
+					<h:panelGroup styleClass="captcha" layout="block">
+						<p:captcha label="Captcha"/>
+					</h:panelGroup>
+					
+					<h:panelGroup layout="block">
+						<br />
+					</h:panelGroup>
+					
+					<p:commandButton update="" styleClass="restaurar" value="Restaurar contraseña" action="#{userBean.restaurarPassword}"  />
+
+					<h:link styleClass="link" value="volver" outcome="login.xhtml" />
+
+				</h:panelGrid>
+
+			</h:form>
+
+		</ui:define>
+
+	</ui:composition>
+
+</h:body>
+
+
+</html>

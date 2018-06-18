@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+
+</h:head>
+
+
+<h:body>
+
+	<ui:composition template="/resources/templates/template-login.xhtml">
+
+		<ui:define name="content">
+
+			 <p:growl id="growl" showDetail="true" sticky="true" /> 
+
+			<h:form>
+
+				<h:panelGrid id="grid" styleClass="tabla_crear_cuenta"
+					cellspacing="5">
+
+					<h:panelGroup layout="block" id="block">
+						<p:inputText id="contraseña" styleClass="textbox_larga"
+							required="true" requiredMessage=" *"  maxlength="8"
+							 validator="#{userBean.validateClave}" />
+							
+							
+						<p:watermark for="contraseña" value="Contraseña" id="watermark_contraseña" />
+						<h:message for="contraseña" styleClass="error"/>
+					</h:panelGroup>
+			
+
+					<h:panelGroup layout="block" id="block2">
+						<p:inputText id="confirmar" styleClass="textbox_larga"
+							required="true" requiredMessage=" *"   maxlength="8" validator="#{userBean.validateConfirmar}"
+							 />
+						<p:watermark for="confirmar" value="Confirmar Contraseña" id="watermark_confirmar" />
+						<h:message for="confirmar" styleClass="error"/>
+					</h:panelGroup>
+
+					
+					
+
+					<p:commandButton update="block block2 growl" styleClass="registrarse"
+						value="registrarse" action="#{userBean.cambiarPassword}" />
+
+
+
+				</h:panelGrid>
+
+			</h:form>
+
+		</ui:define>
+
+	</ui:composition>
+
+</h:body>
+
+
+</html>

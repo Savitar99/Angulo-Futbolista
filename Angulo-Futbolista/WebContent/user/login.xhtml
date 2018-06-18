@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+
+	
+	
+</h:head>
+
+
+<h:body>
+
+	<ui:composition template="/resources/templates/template-login.xhtml">
+
+		<ui:define name="content">
+
+		 
+			
+			<h:form>
+
+				<h:panelGrid id="grid" styleClass="tabla_login" cellspacing="5">
+					
+					<p:inputText id="usuario" value="#{userBean.usuario.userName}" styleClass="textbox" 
+					required="true" requiredMessage=" *" maxlength="8" validator="#{userBean.validateBloquear}"  />
+					
+					<p:watermark for="usuario" value="Ingresa su Nombre de Usuario"
+						id="watermark_usuario" />
+					<p:message for="usuario"/>
+					
+					
+
+					<p:password id="contrasena" value="#{userBean.usuario.password}" styleClass="textbox" required="true" requiredMessage=" *"  validator="#{userBean.validatePasswordBloquear}" />
+					<p:watermark for="contrasena" value="Ingresa la contraseña" 
+						id="watermark_contrasena" />
+					<p:message for="contrasena"/>
+
+					<h:link styleClass="link" value="Olvidé mi contraseña" outcome="restaurar contrasena.xhtml" />
+
+					<p:commandButton update="grid" styleClass="login" value="login" action="#{userBean.iniciar}" />
+  
+					<h:link styleClass="link" value="volver" outcome="sesion.xhtml" />
+
+				</h:panelGrid>
+
+			</h:form>
+			
+		
+			
+
+
+
+
+
+
+		</ui:define>
+
+	</ui:composition>
+	
+	
+
+</h:body>
+
+
+</html>
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+
+<h:head>
+
+	<meta charset="UTF-8" />
+
+	<title>Administrador</title>
+	<f:event listener="#{userBean.verificarSesion()}" type="preRenderView"/>
+	
+	
+	
+
+</h:head>
+	
+
+<h:body>
+
+ 
+	<ui:composition template="/resources/templates/template-index-admin.xhtml">
+	<ui:define name="content">
+	
+	<h:form>
+	
+	   <h:commandLink>
+	     <h:graphicImage url="/resources/images/pdf.png" height="42" width="42"/>
+	     <p:dataExporter type="pdf" target="usuarios" fileName="ListaUsuarios"/>
+	  </h:commandLink>
+	  
+	  <h:commandLink>
+	     <h:graphicImage url="/resources/images/excel.png" height="42" width="42"/>
+	     <p:dataExporter type="xls" target="usuarios" fileName="ListaUsuarios"/>
+	  </h:commandLink>
+	  
+	  <h:commandLink>
+	  <h:graphicImage url="/resources/images/print.png" height="42" width="42"/>
+       <p:printer target="usuarios" />
+      </h:commandLink>
+	
+	</h:form>
+	
+	<p:dataTable id="usuarios" var="user" value="#{userBean.listarUsuarios}" 
+	scrollable="true" scrollWidth="100%" rows="10" paginator="true" 
+	rowsPerPageTemplate="5,10,15"  emptyMessage="No users found with given criteria"> <!--  filteredValue="#{dtFilterView.filteredCars}"--> 
+		
+		<p:column  filterBy="#{user.userName}" sortBy="#{user.userName}">
+			<f:facet name="header">
+				<h:outputText value="Nombre de usuario" />
+			</f:facet>
+			<h:outputText value="#{user.userName}" />
+		</p:column>
+		
+		<p:column filterBy="#{user.ip}" sortBy="#{user.ip}">
+			<f:facet name="header">
+				<h:outputText value="Ip" />
+			</f:facet>
+			<h:outputText value="#{user.ip}" />
+		</p:column>
+		
+		
+		<p:column style="width:30%" filterBy="#{user.emailAddress}" sortBy="#{user.emailAddress}">
+			<f:facet name="header">
+				<h:outputText value="Correo electrónico" />
+			</f:facet>
+			<h:outputText value="#{user.emailAddress}" />
+		</p:column>
+		
+		<p:column  filterBy="#{user.dateLastPassword}" sortBy="#{user.dateLastPassword}">
+			<f:facet name="header">
+				<h:outputText value="Fecha de ingreso" />
+			</f:facet>
+			<h:outputText value="#{user.dateLastPassword}" />
+		</p:column>
+
+		<p:column   filterBy="#{user.userType}" sortBy="#{user.userType}">
+			<f:facet name="header">
+				<h:outputText value="Tipo de usuario" />
+			</f:facet>
+			<h:outputText value="#{user.userType}" />
+		</p:column>
+
+		<p:column   filterBy="#{user.active}" sortBy="#{user.active}">
+			<f:facet name="header">
+				<h:outputText value="Estado" />
+			</f:facet>
+			<h:outputText value="Activo" rendered="#{'A' eq user.active}" />
+			<h:outputText value="InActivo" rendered="#{'I' eq user.active}" />
+		</p:column>
+
+		<p:column style="width:5%"  >
+			<f:facet name="header">
+				<h:outputText value="" />
+			</f:facet>
+			<h:form>
+				<p:commandButton action="#{userBean.prepararModificarUsuario}" icon="ui-icon-folder-open" />
+			</h:form>
+		</p:column>
+		<p:column style="width:5%" >
+			<f:facet name="header">
+				<h:outputText value="" />
+			</f:facet>
+			<h:form>
+				<p:commandButton action="#{userBean.bloquearUsuario}" icon="ui-icon-locked" />
+			</h:form>
+		</p:column>
+		
+		<p:column style="width:5%" >
+			<f:facet name="header">
+				<h:outputText value="" />
+			</f:facet>
+			<h:form>
+				<p:commandButton action="#{userBean.desbloquearUsuario}" icon="ui-icon-unlocked" />
+			</h:form>
+		</p:column>
+		
+	</p:dataTable>
+	<br />
+	
+	
+	
+	
+	</ui:define>
+	
+	
+	
+	</ui:composition>	
+
+</h:body>
+
+
+
+
+</html>

@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+
+</h:head>
+
+
+<h:body>
+
+	<ui:composition template="/resources/templates/template-login.xhtml">
+
+		<ui:define name="content">
+
+			 <p:growl id="growl" showDetail="true" sticky="true" /> 
+
+			<h:form>
+
+				<h:panelGrid id="grid" styleClass="tabla_crear_cuenta"
+					cellspacing="5">
+
+					<h:panelGroup layout="block" id="block">
+						<p:inputText id="usuario" styleClass="textbox_larga" 
+							required="true" requiredMessage=" *"  maxlength="8"  validator="#{userBean.validateUserName}"
+							value="#{userBean.usuario.userName}" />
+							
+							
+						<p:watermark for="usuario" value="Usuario" id="watermark_usuario"/>
+						<h:message for="usuario" styleClass="error"/>
+					</h:panelGroup>
+			
+
+					<h:panelGroup layout="block" id="block2">
+						<p:inputText id="correo" styleClass="textbox_larga"
+							required="true" requiredMessage=" *" validator="#{userBean.validateCorreo}"
+							value="#{userBean.usuario.emailAddress}" />
+						<p:watermark for="correo" value="Correo" id="watermark_correo" />
+						<h:message for="correo" styleClass="error"/>
+					</h:panelGroup>
+
+					<h:panelGroup styleClass="captcha" layout="block">
+						<p:captcha label="Captcha" callback="true" requiredMessage="Valide el captcha" validatorMessage="Aviso"/>
+					</h:panelGroup>
+					
+
+					<p:commandButton update="block block2 growl" styleClass="registrarse"
+						value="Registrarse" action="#{userBean.adicionarUsuario}" />
+
+					<h:link styleClass="link" value="volver" outcome="sesion.xhtml" />
+
+
+				</h:panelGrid>
+
+			</h:form>
+
+		</ui:define>
+
+	</ui:composition>
+
+</h:body>
+
+
+</html>

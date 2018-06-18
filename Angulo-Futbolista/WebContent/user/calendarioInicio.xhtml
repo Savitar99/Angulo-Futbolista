@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+
+<h:head>
+
+	<meta charset="UTF-8" />
+
+	<title>Calendario</title>
+	
+
+</h:head>
+
+
+<h:body>
+ 
+	<ui:composition template="/resources/templates/template-index-inicio.xhtml">
+	<ui:define name="content">
+	
+	<p:dataGrid var="match" value="#{matchBean.listarMatch}" columns="3" layout="grid"
+        rows="12" paginator="true" id="cars"
+        rowsPerPageTemplate="6">
+ 
+        <f:facet name="header">
+            Calendario de partidos
+        </f:facet>
+ 
+        <p:panel header="#{match.grupo}" style="text-align:center">
+            <h:panelGrid columns="1" style="width:100%">
+ 
+                <h:outputText value="#{match.partido}" />
+                 <h:outputText value="#{match.resultado}" />
+                <h:outputText value="#{match.fecha}" />
+                <h:outputText value="#{match.estadio}" />
+ 
+               
+            </h:panelGrid>
+        </p:panel>
+ 
+    </p:dataGrid>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</ui:define>
+	
+	
+	
+	</ui:composition>	
+
+</h:body>
+
+
+
+
+</html>

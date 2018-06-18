@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+
+	<meta charset="UTF-8" />
+
+	<title>Parameter</title>
+	
+
+</h:head>
+
+
+<h:body>
+
+	<ui:composition template="/resources/templates/template-index-admin.xhtml">
+	
+		<ui:define name="content">
+		
+		<h:form>
+	
+	   <h:commandLink>
+	     <h:graphicImage url="/resources/images/pdf.png" height="42" width="42"/>
+	     <p:dataExporter type="pdf" target="parameter" fileName="Parameter"/>
+	  </h:commandLink>
+	  
+	  <h:commandLink>
+	     <h:graphicImage url="/resources/images/excel.png" height="42" width="42"/>
+	     <p:dataExporter type="xls" target="parameter" fileName="Parameter"/>
+	  </h:commandLink>
+	  
+	  <h:commandLink>
+	  <h:graphicImage url="/resources/images/print.png" height="42" width="42"/>
+       <p:printer target="parameter" />
+      </h:commandLink>
+	
+	</h:form>
+	
+			<p:dataTable id="parameter" var="parameter" value="#{parameterBean.listarParameter}" 
+	scrollHeight="150"  rows="10" paginator="true" 
+	rowsPerPageTemplate="5,10,15"  emptyMessage="No parameters found with given criteria"> <!--  filteredValue="#{dtFilterView.filteredCars}"--> 
+		
+		<p:column filterBy="#{parameter.descriptionParameter}" sortBy="#{parameter.descriptionParameter}">
+			<f:facet name="header">
+				<h:outputText value="Descripcion" />
+			</f:facet>
+			<h:outputText value="#{parameter.descriptionParameter}" />
+		</p:column>
+		
+		<p:column filterBy="#{parameter.parameterType}" sortBy="#{parameter.parameterType}">
+			<f:facet name="header">
+				<h:outputText value="Parametro" />
+			</f:facet>
+			<h:outputText value="#{parameter.parameterType}" />
+		</p:column>
+		
+		
+	
+		
+	</p:dataTable>
+		
+		</ui:define>
+	
+	</ui:composition>	
+
+</h:body>
+
+
+</html>
